@@ -1,3 +1,4 @@
 {
-    "terminal.integrated.shell.windows": "C:\\WINDOWS\\sysnative\\bash.exe"
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\sysnative\\bash.exe",
+    "editor.tabSize": 2
 }
