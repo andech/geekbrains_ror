@@ -1,4 +1,4 @@
-namespace :test do
+namespace :development do
     desc "Fill db with test data"
     task test_data: :environment do
 
