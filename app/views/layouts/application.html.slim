@@ -6,9 +6,13 @@ html
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag "https://fonts.googleapis.com/icon?family=Material+Icons"
+    = stylesheet_link_tag "https://fonts.googleapis.com/css?family=Bad+Script|Vollkorn:400,600"
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    .wrapper
+    header
       = render :partial => 'header'
+    main
       = yield
+    footer
       = render :partial => 'footer'
