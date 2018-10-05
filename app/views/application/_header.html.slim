@@ -1,0 +1,10 @@
+nav.menu
+  ul
+    li
+      = link_to "Главная", root_path, current_page?(root_path) ? {class: 'current'} : {}
+    li
+      = link_to "Стихи", poetry_path, current_page?(poetry_path) ? {class: 'current'} : {}
+    li
+      = link_to "Блог", posts_path, current_page?(posts_path) ? {class: 'current'} : {}
+    li
+      = link_to "Пользователи", users_path, current_page?(users_path) ? {class: 'current'} : {}

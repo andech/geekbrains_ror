@@ -1,0 +1,9 @@
+article
+  h2 = link_to "#{post.title}", post
+  h5 = post.created_at.to_time.strftime('%d.%m.%Y')
+  p = truncate(post.body, length: 200, separator: ' ')
+  / td = post.user
+  / td = post.visible
+  / td = link_to 'Show', post
+  / td = link_to 'Edit', edit_post_path(post)
+  / td = link_to 'Destroy', post, data: { confirm: 'Are you sure?' }, method: :delete

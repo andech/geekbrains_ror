@@ -1,0 +1,8 @@
+h1 Блог
+
+= render partial: 'post', collection: @posts
+
+p
+  = link_to 'New Post', new_post_path
+p
+  = paginate @posts, window: 2
