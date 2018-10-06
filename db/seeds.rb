@@ -15,7 +15,8 @@ Seo.destroy_all
 hash_users = 10.times.map do 
   {
     name: FFaker::Internet.user_name[0..16],
-    email: FFaker::Internet.safe_email
+    email: FFaker::Internet.safe_email,
+    password: FFaker::Internet.safe_email
   }
 end
 users = User.create! hash_users

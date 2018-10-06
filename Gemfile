@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+gem 'devise'
 gem 'kaminari'
 gem 'awesome_print'
 gem 'html2slim'
@@ -45,6 +46,7 @@ group :development, :test do
   gem 'ffaker'
   gem 'jquery-rails'
   gem 'xray-rails'
+  gem 'letter_opener'
 end
 
 group :development do
