@@ -49,6 +49,8 @@ ru:
     register: Зарегистрироваться
     forgot_password: Забыли пароль?
     send_reset: Отправить инструкции на email
+    profile: Мой профиль
+    users: Пользователи
   text:
     characters_minimum: символом минимум
   activerecord:

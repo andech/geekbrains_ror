@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  # Only moderator can see the list of all users and add or delete them
+  before_action :ensure_moderator!, only: [:index, :destroy, :new]
+  # User can see, edit and update his own profile
+  before_action :check_user_rights!, only: [:show, :edit, :update]
 
   # GET /users
   # GET /users.json
@@ -72,4 +76,23 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :email, :moderator, :creator, :banned)
     end
+
+    # Check is user a moderator?
+    def ensure_moderator!
+      unless current_user.moderator?
+        redirect_to root_path
+        false
+      end
+    end
+
+    # Check is user a moderator or user want to see his profile?
+    def check_user_rights!
+      unless current_user.moderator?
+        unless current_user.id == params[:id].to_i
+          redirect_to current_user
+          false
+        end
+      end
+    end
+
 end
