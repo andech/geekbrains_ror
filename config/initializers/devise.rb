@@ -1,8 +1,11 @@
 # frozen_string_literal: true
 
+
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
+
+  Rails.root.join("config", "oauth.yml")
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
@@ -287,4 +290,11 @@ Devise.setup do |config|
   # ActiveSupport.on_load(:devise_failure_app) do
   #   include Turbolinks::Controller
   # end
+
+  config.omniauth :facebook, Rails.application.credentials.facebook[:app_id],  Rails.application.credentials.facebook[:app_secret]
+  config.omniauth :vkontakte, Rails.application.credentials.vkontakte[:app_id],  Rails.application.credentials.vkontakte[:app_secret]
+  config.omniauth :twitter, Rails.application.credentials.twitter[:app_id],  Rails.application.credentials.twitter[:app_secret]
+  config.omniauth :yandex, Rails.application.credentials.yandex[:app_id],  Rails.application.credentials.yandex[:app_secret]
+  config.omniauth :google_oauth2, Rails.application.credentials.google_oauth2[:app_id],  Rails.application.credentials.google_oauth2[:app_secret]
+
 end
