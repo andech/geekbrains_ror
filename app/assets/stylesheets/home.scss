@@ -96,6 +96,49 @@ body {
     article {
       margin: 30px auto;
     }
+    .field-remember {
+      display: flex;
+      label {
+        margin-left: 5px;
+      }
+    }
+    #new_user .field {
+      label[for=user_password] {
+        float: left;
+      }
+      #user_password {
+        clear: both;
+        display: block;
+      }
+    }
+    input {
+      background: lighten($primary-color, 43%);
+      border: none;
+      height: 30px;
+      width: 200px;
+      border-bottom: 3px $primary-color solid;
+      padding: 3px;
+    }
+    input[type=submit] {
+      background-color: $primary-color;
+      color: white;
+      font-size: 19px;
+      font-family: inherit;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      width: auto;
+      height: auto;
+      padding: 5px;
+      min-width: 200px;
+      &:hover {
+        background-color: darken($primary-color, 20%);
+      }
+    }
+    input[type=checkbox] {
+      height: auto;
+      width: auto;
+    }
   }
   
   footer {

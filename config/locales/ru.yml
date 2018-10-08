@@ -38,24 +38,36 @@ ru:
       next: "&rsaquo;"
       truncate: "&hellip;"
   label:
-    log_in: Вход
+    log_in: Войти
     log_out: Выход
     hello: Привет, %s
     registration: Регистрация
+    email: Email
+    password: Пароль
+    sign_up: Регистрация
+    forgot_password: Забыли пароль?
+    register: Зарегистрироваться
+    forgot_password: Забыли пароль?
+    send_reset: Отправить инструкции на email
+    profile: Мой профиль
+    users: Пользователи
+  text:
+    characters_minimum: символом минимум
   activerecord:
     errors:
       blank: обязательно для заполнения
       too_short: слишком коротко
 
-      models: 
-        user: Пользователи
-        post: Сообщения
+    models: 
+      user: Пользователи
+      post: Сообщения
 
-        attributes:
-          user: 
-            password: Пароль
-            password_confirmation: Подтверждение
-            email: Email
-            name: Имя пользователя
+    attributes:
+      user: 
+        password: Пароль
+        password_confirmation: Подтверждение
+        email: Email
+        name: Ваше имя
+        remember_me: Запомнить
 
     

@@ -6,16 +6,18 @@ nav.menu
       = link_to "Стихи", poetry_path, current_page?(poetry_path) ? {class: 'current'} : {}
     li
       = link_to "Блог", posts_path, current_page?(posts_path) ? {class: 'current'} : {}
-    li
-      = link_to "Пользователи", users_path, current_page?(users_path) ? {class: 'current'} : {}
+    / Show users lihk only for moderators
+    - if user_signed_in? && current_user.moderator?
+      li
+        = link_to t('label.users'), users_path, current_page?(users_path) ? {class: 'current'} : {}
     - if user_signed_in?
       li
         span = t('label.hello') % current_user.email
       li
+        = link_to t('label.profile'), user_path(current_user.id), current_page?(user_path(current_user.id)) ? {class: 'current'} : {}
+      li
         = link_to t('label.log_out'), destroy_user_session_path, method: :delete
     - else
       li
-        = link_to t('label.log_in'), new_user_session_path
-      li 
-        = link_to t('label.registration'), new_user_registration_path
+        = link_to t('label.log_in'), new_user_session_path, current_page?(new_user_session_path) ? {class: 'current'} : {}
 
