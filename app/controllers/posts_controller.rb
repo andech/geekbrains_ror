@@ -5,7 +5,18 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.includes(:user).page(params[:page]).per(3)
+    count = 3
+    if params[:id]
+      @posts = Post.where('id < ?', params[:id])
+      # Post.includes(:user).page(params[:page]).per(3)
+    else
+      @posts = Post.limit(count)
+    end
+    count+=3
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # GET /posts/1
