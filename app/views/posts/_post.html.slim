@@ -1,4 +1,4 @@
-article
+article[class = 'post-item', data-id = post.id]
   h2 = link_to "#{post.title}", post
   h5 = post.created_at.to_time.strftime('%d.%m.%Y')
   p = truncate(post.body, length: 200, separator: ' ')
