@@ -1,8 +1,11 @@
 h1 Блог
 
-= render partial: 'post', collection: @posts
+div.posts
+  = render partial: 'post', collection: @posts
 
 p
   = link_to 'New Post', new_post_path
-p
-  = paginate @posts, window: 2
+/ p
+/   = paginate @posts, window: 2
+
+= link_to 'Показать ещё', posts_path, class: 'load-more' 

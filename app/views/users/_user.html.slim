@@ -4,6 +4,8 @@ tr
   td = user.moderator
   td = user.creator
   td = user.banned
+  td = user.posts.count
+  td = user.comments.count
   td = link_to 'Show', user
   td = link_to 'Edit', edit_user_path(user)
   td = link_to 'Destroy', user, data: { confirm: 'Are you sure?' }, method: :delete

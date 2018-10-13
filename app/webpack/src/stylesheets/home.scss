@@ -4,7 +4,7 @@
 $main-color: #4D4D4D;
 $primary-color: #EE2777;
 
-html {
+body {
   font-family: 'Vollkorn', serif;
   font-size: 20px;
   color: $main-color;
@@ -36,7 +36,7 @@ p, h1, h2, h4, h5 {
 
 body {
   overflow-y: scroll;
-  background-image: image-url("background.jpg");
+  background-image: url('images/background.jpg');
   margin: 0;
   display: grid;
   grid-template-columns: 1fr 2fr 2fr 1fr;

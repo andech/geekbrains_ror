@@ -1,16 +1,18 @@
 h1 Listing users
 
-table
-  thead
+table.table.table-striped
+  thead.thead-dark
     tr
-      th Name
-      th Email
-      th Moderator
-      th Creator
-      th Banned
-      th
-      th
-      th
+      th[scope="col"] Name
+      th[scope="col"] Email
+      th[scope="col"] Moderator
+      th[scope="col"] Creator
+      th[scope="col"] Banned
+      th[scope="col"] Posts
+      th[scope="col"] Comments
+      th[scope="col"]
+      th[scope="col"]
+      th[scope="col"]
 
   tbody
     = render partial: 'user', collection: @users

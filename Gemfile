@@ -11,6 +11,8 @@ gem 'omniauth-twitter'
 gem "omniauth-yandex"
 gem 'omniauth-google-oauth2'
 
+gem 'foreman'
+gem 'webpacker'
 gem 'kaminari'
 gem 'awesome_print'
 gem 'html2slim'
@@ -24,7 +26,7 @@ gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+# gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'duktape'
 # Use CoffeeScript for .coffee assets and views
@@ -51,9 +53,9 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'ffaker'
-  gem 'jquery-rails'
-  gem 'xray-rails'
-  gem 'letter_opener'
+  # gem 'jquery-rails'
+  # gem 'xray-rails'
+  # gem 'letter_opener'
 end
 
 group :development do
