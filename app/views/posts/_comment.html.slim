@@ -1,0 +1,5 @@
+ div.comment
+  div.comment-head
+    span.comment-title = comment.user.name
+    span.comment-date = comment.created_at.to_time.strftime('%d.%m.%Y в %H:%M')
+  div.comment-body = comment.body

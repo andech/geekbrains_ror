@@ -2,35 +2,14 @@ p#notice = notice
 
 h1 = @post.title
 p = @post.body
-/ p
-/   strong User:
-/   = @post.user
-/ p
-/   strong Visible:
-/   = @post.visible
+
 => link_to 'Edit', edit_post_path(@post)
 '|
 =< link_to 'Back', posts_path
 
 section
   h4 Комментарии:
-  div.comments
-   - @comments.order(:created_at).each do |comment|
-    div.comment 
-      div.comment-head
-        span.comment-title = comment.user.name
-        span.comment-date = comment.created_at.to_time.strftime('%d.%m.%Y в %H:%M')
-      div.comment-body = comment.body
+  div.comments 
+    = render partial: 'comment', collection: @comments
 
 = paginate @comments
-/ p
-/   h4 Комментарии:
-/   table
-/    - @comments.order(:created_at).each do |comment|
-/     tr  
-/       td: b = comment.user.name
-/       td = comment.body
-
-
-
-
