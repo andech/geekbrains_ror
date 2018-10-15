@@ -12,4 +12,5 @@ section
   div.comments 
     = render partial: 'comment', collection: @comments
 
-= paginate @comments
+div.pagination-comments
+  = link_to_next_page @comments, 'Показать ещё', class: 'load-more', remote: true

@@ -5,7 +5,7 @@ div.posts
 
 p
   = link_to 'New Post', new_post_path
-/ p
-/   = paginate @posts, window: 2
+p
 
-= link_to 'Показать ещё', posts_path, class: 'load-more' 
+div.pagination
+  = link_to_next_page @posts, 'Показать ещё', remote: true, class: 'load-more'

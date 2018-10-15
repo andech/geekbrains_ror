@@ -293,8 +293,8 @@ Devise.setup do |config|
 
   config.omniauth :facebook, Rails.application.credentials.facebook[:app_id],  Rails.application.credentials.facebook[:app_secret]
   config.omniauth :vkontakte, Rails.application.credentials.vkontakte[:app_id],  Rails.application.credentials.vkontakte[:app_secret]
-  config.omniauth :twitter, Rails.application.credentials.twitter[:app_id],  Rails.application.credentials.twitter[:app_secret]
-  config.omniauth :yandex, Rails.application.credentials.yandex[:app_id],  Rails.application.credentials.yandex[:app_secret]
-  config.omniauth :google_oauth2, Rails.application.credentials.google_oauth2[:app_id],  Rails.application.credentials.google_oauth2[:app_secret]
+  # config.omniauth :twitter, Rails.application.credentials.twitter[:app_id],  Rails.application.credentials.twitter[:app_secret]
+  # config.omniauth :yandex, Rails.application.credentials.yandex[:app_id],  Rails.application.credentials.yandex[:app_secret]
+  # config.omniauth :google_oauth2, Rails.application.credentials.google_oauth2[:app_id],  Rails.application.credentials.google_oauth2[:app_secret]
 
 end

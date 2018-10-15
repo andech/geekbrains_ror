@@ -58,13 +58,23 @@ class User < ApplicationRecord
         # Здесь нужны обработчики для каждого провайдера, т.к. хэш
         # с данными возвращается с разной структурой
         if user.nil?
-          user = User.new(
-            name: auth.extra.raw_info.name? ? auth.extra.raw_info.name : FFaker::Internet.user_name[0..16],
-            #username: auth.info.nickname || auth.uid,
-            email: auth.extra.raw_info.email? ? auth.extra.raw_info.email : FFaker::Internet.safe_email,
-            password: Devise.friendly_token[0,20]
-          )
-          # user.skip_confirmation!
+          if auth.provider == "facebook"
+            user = User.new(
+              name: auth.extra.raw_info.name? ? auth.extra.raw_info.name : FFaker::Internet.user_name[0..16],
+              #username: auth.info.nickname || auth.uid,
+              email: auth.extra.raw_info.email? ? auth.extra.raw_info.email : FFaker::Internet.safe_email,
+              password: Devise.friendly_token[0,20]
+            )
+          end
+          if auth.provider == "vkontakte"
+            user = User.new(
+              name: auth.info.name? ? auth.info.name : FFaker::Internet.user_name[0..16],
+              #username: auth.info.nickname || auth.uid,
+              email: auth.info.email? ? auth.info.email : FFaker::Internet.safe_email,
+              password: Devise.friendly_token[0,20]
+            )
+          end
+          # user.skip_confirmation!  
           # byebug
           user.save!
         end

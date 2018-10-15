@@ -1,0 +1,5 @@
+|
+  $('#{j(render(partial: 'comment', collection: @comments))}').appendTo('div.comments');
+|
+  $('div.pagination-comments').html('#{j link_to_next_page @comments, 'Показать ещё', remote: true, class: 'load-more'}')
+  

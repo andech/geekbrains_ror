@@ -1,2 +1,5 @@
 |
-  $('#{j(render(partial: @posts))}').appendTo('div.posts');
+  $('#{j(render(partial: 'post', collection: @posts))}').appendTo('div.posts');
+|
+  $('div.pagination').html('#{j link_to_next_page @posts, 'Показать ещё', remote: true, class: 'load-more'}')
+  
