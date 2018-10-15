@@ -10,7 +10,6 @@
 import Rails from 'rails-ujs';
 import Turbolinks from 'turbolinks'
 import 'bootstrap'
-import '../src/js/posts'
 
 Rails.start();
 Turbolinks.start();

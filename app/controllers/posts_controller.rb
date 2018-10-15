@@ -1,30 +1,27 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  before_action :set_page, only: [:index]
 
+  respond_to :html, :js, only: [:index, :show]
+  
   # GET /posts
   # GET /posts.json
   def index
-    if params[:id]
-      @posts = Post.where('id > ?', params[:id]).limit(3)
-    else
-      @posts = Post.limit(3)
-    end
-    respond_to do |format|
-      format.html
-      format.js
-    end
+    @posts = Post.page(params[:page]).per(3)
+    respond_with @posts
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
     @comments = @post.comments.page(params[:page]).per(10)
+    respond_with @comments
   end
 
   # GET /posts/new
   def new
-    @post = Post.new
+    @post = Post.new()
   end
 
   # GET /posts/1/edit
@@ -35,6 +32,7 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
+    byebug
 
     respond_to do |format|
       if @post.save
@@ -72,6 +70,10 @@ class PostsController < ApplicationController
   end
 
   private
+    def set_page
+      @page ||= 1
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])
